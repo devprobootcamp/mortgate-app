@@ -26,6 +26,12 @@ public class PaymentTransactionEntity {
     @Column(name = "amount", nullable = false)
     private Double amount;
 
+    @Column(name = "additional_amount")
+    private Double additionalAmount = 0.0;
+
+    @Column(name = "interest_amount", nullable = false)
+    private Double interestAmount;
+
     @Column(name = "payment_date", nullable = false)
     private LocalDateTime paymentDate;
 

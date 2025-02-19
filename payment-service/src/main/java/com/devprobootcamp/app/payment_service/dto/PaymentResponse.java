@@ -17,6 +17,8 @@ public class PaymentResponse {
 
     private String homeId;
     private Double amount;
+    private Double additionalAmount = 0.0;
+    private Double interestAmount;
     private LocalDateTime paymentDate;
     private Double balance;
 }
