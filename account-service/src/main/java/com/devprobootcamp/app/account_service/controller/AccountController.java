@@ -1,4 +1,4 @@
-package com.devprobootcamp.app.account_service;
+package com.devprobootcamp.app.account_service.controller;
 
 import com.devprobootcamp.app.account_service.dto.AccountRequest;
 import com.devprobootcamp.app.account_service.dto.AccountResponse;
