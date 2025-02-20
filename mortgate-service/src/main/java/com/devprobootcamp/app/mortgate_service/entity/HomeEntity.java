@@ -36,6 +36,9 @@ public class HomeEntity {
     @Column(name = "total_price", nullable = false)
     private Double totalPrice;
 
+    @Column(name = "mortgage_amount", nullable = false)
+    private Double mortgageAmount;
+
     @Column(name = "interest_rate", nullable = false)
     private Double interestRate;
 

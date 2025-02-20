@@ -40,6 +40,9 @@ public class HomeRequest {
     @NotNull(message = "totalPrice is required")
     private Double totalPrice;
 
+    @NotNull(message = "mortgageAmount is required")
+    private Double mortgageAmount;
+
     @NotNull(message = "interestRate is required")
     private Double interestRate;
 

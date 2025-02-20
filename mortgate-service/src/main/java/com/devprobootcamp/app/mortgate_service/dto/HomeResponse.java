@@ -22,7 +22,7 @@ public class HomeResponse {
 
     private Double totalPrice;
     private Double interestRate;
-
+    private Double mortgageAmount;
     private Integer loanDuration;
 
     private AccountDTO account;

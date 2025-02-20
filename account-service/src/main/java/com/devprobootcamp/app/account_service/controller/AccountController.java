@@ -31,7 +31,7 @@ public class AccountController {
         return new ResponseEntity<>(accountService.getAllAccount(), HttpStatus.CREATED);
     }
 
-    @PostMapping("/{accountId}")
+    @GetMapping("/{accountId}")
     public ResponseEntity<AccountResponse> getAccount(@PathVariable("accountId") String accountId) {
         return new ResponseEntity<>(accountService.getAccount(accountId), HttpStatus.CREATED);
     }
