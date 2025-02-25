@@ -59,20 +59,38 @@ public class HomeService {
         List<HomeResponse> response = new ArrayList<>();
         List<HomeEntity> homes = homeRepository.findAll();
         for (HomeEntity home : homes) {
-            HomeResponse homeResponse = new HomeResponse();
-            homeResponse.setId(home.getId());
-            homeResponse.setAddress(home.getStreet() + "," + home.getCity() + "," + home.getState() + "," + home.getZipCode() + "," + home.getCountry());
-            homeResponse.setTotalPrice(home.getTotalPrice());
-            homeResponse.setMortgageAmount(home.getMortgageAmount());
-            homeResponse.setInterestRate(home.getInterestRate());
-            homeResponse.setLoanDuration(home.getLoanDuration());
-
-            AccountDTO accountDTO = callAccountService(home.getAccountId());
-            homeResponse.setAccount(accountDTO);
+            HomeResponse homeResponse = getHomeResponse(home);
             response.add(homeResponse);
 
         }
         return response;
+    }
+
+
+
+    public HomeResponse getHome(String homeId){
+        Optional<HomeEntity> homeEntityOptional = homeRepository.findById(homeId);
+        if(homeEntityOptional.isEmpty()){
+            throw new ResourceNotFoundException("Home not found!");
+        }
+        HomeEntity homeEntity = homeEntityOptional.get();
+
+        return getHomeResponse(homeEntity);
+
+    }
+
+    private HomeResponse getHomeResponse(HomeEntity home) {
+        HomeResponse homeResponse = new HomeResponse();
+        homeResponse.setId(home.getId());
+        homeResponse.setAddress(home.getStreet() + "," + home.getCity() + "," + home.getState() + "," + home.getZipCode() + "," + home.getCountry());
+        homeResponse.setTotalPrice(home.getTotalPrice());
+        homeResponse.setMortgageAmount(home.getMortgageAmount());
+        homeResponse.setInterestRate(home.getInterestRate());
+        homeResponse.setLoanDuration(home.getLoanDuration());
+
+        AccountDTO accountDTO = callAccountService(home.getAccountId());
+        homeResponse.setAccount(accountDTO);
+        return homeResponse;
     }
 
 

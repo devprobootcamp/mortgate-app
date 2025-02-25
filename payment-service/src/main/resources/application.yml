@@ -1,0 +1,21 @@
+
+spring:
+  application:
+    name: payment-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/mort_payment_db
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: root123!
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+app:
+  service:
+    mort-service: http://localhost:8080/homes
+
+server:
+  port: 8082

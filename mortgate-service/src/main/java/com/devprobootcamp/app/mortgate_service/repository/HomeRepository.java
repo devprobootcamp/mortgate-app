@@ -11,4 +11,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface HomeRepository extends JpaRepository<HomeEntity, String> {
 
+    //findById();
+//    findAll();
+//    save(HomeEntity)
+
 }

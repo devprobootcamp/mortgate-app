@@ -21,5 +21,4 @@ public class PaymentRequest {
     @NotNull(message = "amount is required")
     private Double amount;
 
-    private Double additionalAmount = 0.0;
 }

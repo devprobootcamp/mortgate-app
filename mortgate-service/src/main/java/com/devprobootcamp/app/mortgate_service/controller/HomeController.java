@@ -38,4 +38,13 @@ public class HomeController {
         List<HomeResponse> homes = homeService.getAllHome();
         return new ResponseEntity<>(homes, HttpStatus.OK);
     }
+
+    @GetMapping("/{homeId}")
+    public ResponseEntity<HomeResponse> getHome(@PathVariable("homeId") String homeId) {
+        HomeResponse home = homeService.getHome(homeId);
+        return new ResponseEntity<>(home, HttpStatus.OK);
+    }
+
+
+
 }

@@ -8,6 +8,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * Author: Edward Tanko <br/>
  * Date: 2/19/25 7:58 AM<br/>
@@ -26,8 +28,7 @@ public class PaymentController {
     }
 
     @GetMapping("/{homeId}")
-    public ResponseEntity<PaymentResponse> getHomePaymentBalance(@PathVariable("homeId") String homeId) {
-        PaymentResponse paymentResponse = paymentService.getPaymentBalance(homeId);
-        return new ResponseEntity<>(paymentResponse, HttpStatus.OK);
+    public ResponseEntity<List<PaymentResponse>> getHomePaymentBalance(@PathVariable("homeId") String homeId) {
+        return new ResponseEntity<>(paymentService.getPaymentBalance(homeId), HttpStatus.OK);
     }
 }
