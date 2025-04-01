@@ -2,7 +2,7 @@ spring:
   application:
     name: account-service
   datasource:
-    url: jdbc:mysql://localhost:3306/mort_account_db
+    url: jdbc:mysql://localhost:6033/mort_account_db
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: root123!
     username: root
